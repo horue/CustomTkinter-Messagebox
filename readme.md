@@ -26,9 +26,18 @@ To use CustomTkinterMessagebox in your Python application, follow these steps:
 3.  **Display Message Box:** Call the `messagebox` method with your desired parameters to display a message box:
  
     `CTkMessagebox.messagebox(title='CustomTKinterMessagebox', text='This is a sample message!', sound='on', button_text='OK')` 
-    
 
-## 3. Dependencies
+## 3. Parameters for the `messagebox` Function
+| Parameter    | Default Value           | Description                                             |
+|--------------|-------------------------|---------------------------------------------------------|
+| title        | 'CustomTKinterMessagebox!' | The title of the message box.                         |
+| text         | 'Messagebox is working!'  | The message text displayed in the message box.        |
+| sound        | 'on'                        | Sound option for playing system sound effect.         |
+| button_text  | 'OK'                        | Text for the button displayed in the message box.     |
+| size         | '320x150'                   | Size of the message box window.                       |
+| center       | True                        | Whether to center the message box window on the screen.|
+| top          | True                        | Whether the message box window should be on top.      |
+## 4. Dependencies
 
 CustomTkinterMessagebox depends on the following Python libraries:
 
@@ -38,16 +47,16 @@ CustomTkinterMessagebox depends on the following Python libraries:
 
 Make sure to have these dependencies installed in your Python environment before using CustomTkinterMessagebox.
 
-## 4. Additional Notes
+## 5. Additional Notes
 
 -   Customize the appearance and behavior of the message box by modifying the code within the `CTkMessagebox` class.
 -   Feel free to contribute to the project by submitting bug reports, feature requests, or code contributions on the GitHub repository.
 
-## 5. Support and Contributions
+## 6. Support and Contributions
 
 If you encounter any issues or have suggestions for improvements, please feel free to open an issue on the GitHub repository. Contributions via pull requests are also welcome!
 
-## 6. Examples
+## 7. Examples
 
 Check out the `examples.py` file for some usage examples of CustomTkinterMessagebox.
 
@@ -80,11 +89,11 @@ Check out the `examples.py` file for some usage examples of CustomTkinterMessage
     
     main()
 
-## 7. License
+## 8. License
 
 CustomTkinterMessagebox is licensed under the MIT License. You are free to use and modify this software for any purpose.
 
-## 8. Inspired by CustomTkinter
+## 9. Inspired by CustomTkinter
 
 CustomTkinterMessagebox was inspired by the CustomTkinter library, a custom-themed extension of the Tkinter GUI toolkit. While CustomTkinterMessagebox provides specific functionality for creating customizable message boxes, the underlying structure and theme integration were influenced by CustomTkinter.
 
