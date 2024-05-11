@@ -5,7 +5,8 @@ def messagebox(title='Aviso', text='Placeholder'):
     message_box.geometry('320x150')
     message_box.title(title)
     message_box.resizable(False, False)
-    message_box.attributes('-toolwindow', True, '-topmost', True)
+    message_box.attributes('-toolwindow', False, '-topmost', True)
+    message_box.grab_set()
 
     l1 = ct.CTkLabel(message_box, text=text)
     l1.pack(pady=30)
@@ -14,13 +15,11 @@ def messagebox(title='Aviso', text='Placeholder'):
     b1.pack(pady=15)
 
 
-
-
 root = ct.CTk()
 root.geometry("300x200")
 
 # Botão para mostrar a caixa de diálogo personalizada
-button = ct.CTkButton(root, text="Test Button", command=lambda:messagebox(title='Warining!'))
+button = ct.CTkButton(root, text="Test Button", command=lambda:messagebox(title='Warning!'))
 button.pack(pady=20)
 
 root.mainloop()
