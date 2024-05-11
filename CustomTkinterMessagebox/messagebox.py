@@ -15,8 +15,8 @@ def open_sound():
     winsound.PlaySound(system_sound_path, winsound.SND_FILENAME | winsound.SND_ASYNC)
 
 
-class Messagebox():
-    def CTkMessagebox(title='Warning!', text='Placeholder', sound='on', button_text='OK'):
+class CTkMessagebox():
+    def messagebox(title='Warning!', text='Placeholder', sound='on', button_text='OK'):
         message_box = ct.CTkToplevel()
         message_box.geometry('320x150')
         message_box.title(title)
@@ -47,10 +47,11 @@ class Messagebox():
 
 
 
-root = ct.CTk()
+"""root = ct.CTk()
 root.geometry("300x200")
 
-button = ct.CTkButton(root, text="Test Button", command=lambda:Messagebox.CTkMessagebox(title='Warning!', text='Error. No link was given.'))
+nome = 'Calin'
+button = ct.CTkButton(root, text="Test Button", command=lambda:Messagebox.CTkMessagebox(title='Warning!', text='Error.'))
 button.pack(pady=20)
 
-root.mainloop()
+root.mainloop()"""
