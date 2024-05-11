@@ -1,5 +1,6 @@
 import customtkinter as ct
 import winsound
+from PIL import Image
 
 def open():
     system_sound_path = "C:\\Windows\\Media\\Windows Notify System Generic.wav"
@@ -17,7 +18,10 @@ def messagebox(title='Aviso', text='Placeholder'):
     l1 = ct.CTkLabel(message_box, text=text)
     l1.pack(pady=30)
 
-    b1 = ct.CTkButton(message_box, text='Ok', command=message_box.destroy)
+    colored_frame = ct.CTkFrame(message_box, height=1)
+    colored_frame.pack(side="bottom", fill="x")
+
+    b1 = ct.CTkButton(colored_frame, text='Ok', command=message_box.destroy)
     b1.pack(pady=15)
 
     open()
