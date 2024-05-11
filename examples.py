@@ -23,6 +23,12 @@ def main():
     b4 = ct.CTkButton(root, text="No sound test", command=lambda:CTkMessagebox.messagebox(title='No sound example!', text='No sound here.', sound='off'))
     b4.pack(pady=10)
 
+    b5 = ct.CTkButton(root, text="Size test", command=lambda:CTkMessagebox.messagebox(title='Custom size example!', text='This looks big!', size='700x500'))
+    b5.pack(pady=10)
+
+    b6 = ct.CTkButton(root, text="Position test", command=lambda:CTkMessagebox.messagebox(title='Position test', text='This looks kinda off!', center=False))
+    b6.pack(pady=10)
+
 
     root.mainloop()
 
