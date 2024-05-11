@@ -6,7 +6,7 @@ def open_sound():
     system_sound_path = "C:\\Windows\\Media\\Windows Notify System Generic.wav"
     winsound.PlaySound(system_sound_path, winsound.SND_FILENAME | winsound.SND_ASYNC)
 
-def messagebox(title='Aviso', text='Placeholder', sound='on'):
+def messagebox(title='Warning!', text='Placeholder', sound='on', button_text='OK'):
     message_box = ct.CTkToplevel()
     message_box.geometry('320x150')
     message_box.title(title)
@@ -26,7 +26,7 @@ def messagebox(title='Aviso', text='Placeholder', sound='on'):
     colored_frame = ct.CTkFrame(message_box, height=1)
     colored_frame.pack(side="bottom", fill="x")
 
-    b1 = ct.CTkButton(colored_frame, text='Ok', command=message_box.destroy)
+    b1 = ct.CTkButton(colored_frame, text=button_text, command=message_box.destroy)
     b1.pack(pady=15)
 
     if sound == 'on':
@@ -39,7 +39,7 @@ def messagebox(title='Aviso', text='Placeholder', sound='on'):
 root = ct.CTk()
 root.geometry("300x200")
 
-button = ct.CTkButton(root, text="Test Button", command=lambda:messagebox(title='Warning!', text='Missing arg'))
+button = ct.CTkButton(root, text="Test Button", command=lambda:messagebox(title='Warning!', text='Error. No link was given.'))
 button.pack(pady=20)
 
 root.mainloop()
