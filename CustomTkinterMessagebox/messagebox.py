@@ -16,14 +16,24 @@ def open_sound():
 
 
 class CTkMessagebox():
-    def messagebox(title='CustomTKinterMessagebox!', text='Messagebox is working!', sound='on', button_text='OK', geometry='320x150'):
+    def messagebox(title='CustomTKinterMessagebox!', 
+                   text='Messagebox is working!', 
+                   sound='on', 
+                   button_text='OK', 
+                   size='320x150', 
+                   center=True,
+                   top=True):
         message_box = ct.CTkToplevel()
-        message_box.geometry(geometry)
+        message_box.geometry(size)
         message_box.title(title)
         message_box.resizable(False, False)
-        message_box.attributes('-toolwindow', True, '-topmost', True)
+        message_box.attributes('-toolwindow', True, '-topmost', top)
         message_box.grab_set()
-        center_window(message_box)
+
+        if center == True:
+            center_window(message_box)
+        else:
+            pass
 
 
         l1 = ct.CTkLabel(message_box, text=text)
