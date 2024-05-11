@@ -16,9 +16,9 @@ def open_sound():
 
 
 class CTkMessagebox():
-    def messagebox(title='Warning!', text='Placeholder', sound='on', button_text='OK'):
+    def messagebox(title='CustomTKinterMessagebox!', text='Messagebox is working!', sound='on', button_text='OK', geometry='320x150'):
         message_box = ct.CTkToplevel()
-        message_box.geometry('320x150')
+        message_box.geometry(geometry)
         message_box.title(title)
         message_box.resizable(False, False)
         message_box.attributes('-toolwindow', True, '-topmost', True)
