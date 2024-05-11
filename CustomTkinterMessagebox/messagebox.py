@@ -39,11 +39,6 @@ class CTkMessagebox():
         l1 = ct.CTkLabel(message_box, text=text)
         l1.pack(pady=30)
 
-
-        my_image = ct.CTkImage(light_image=Image.open(r"Visual\Icons\close.png"), dark_image=Image.open(r"Visual\Icons\close.png"),size=(30, 30))
-
-        i1 = ct.CTkLabel(message_box, image=my_image, text="")
-
         colored_frame = ct.CTkFrame(message_box, height=1)
         colored_frame.pack(side="bottom", fill="x")
 
