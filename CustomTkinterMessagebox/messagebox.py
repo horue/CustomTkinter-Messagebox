@@ -1,7 +1,7 @@
 import customtkinter as ct
 import winsound
 from PIL import Image
-
+import playsound
 
 class Utils():
     @staticmethod
@@ -14,9 +14,15 @@ class Utils():
         window.geometry(f"+{x}+{y}")
 
     @staticmethod
-    def open_sound():
-        system_sound_path = "C:\\Windows\\Media\\Windows Notify System Generic.wav"
-        winsound.PlaySound(system_sound_path, winsound.SND_FILENAME | winsound.SND_ASYNC)
+    async def open_sound(system):
+        match system:
+            case "Windows":
+                system_sound_path = r"C:\\Windows\\Media\\Windows Notify System Generic.wav"
+            case "Linux":
+                pass
+            case "macOS":
+                system_sound_path = r"CustomTkinterMessagebox\sounds\mac_os_breeze.mp3"
+        playsound.playsound(system_sound_path)
 
 
 class CTkMessagebox():
@@ -26,7 +32,8 @@ class CTkMessagebox():
                    button_text='OK', 
                    size='320x150', 
                    center=True,
-                   top=True):
+                   top=True,
+                   system="Windows"):
         message_box = ct.CTkToplevel()
         message_box.geometry(size)
         message_box.title(title)
@@ -50,7 +57,7 @@ class CTkMessagebox():
         b1.pack(pady=15)
 
         if sound == 'on':
-            Utils.open_sound()
+            Utils.open_sound(system)
         else:
             pass
 
