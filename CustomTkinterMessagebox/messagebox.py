@@ -2,17 +2,21 @@ import customtkinter as ct
 import winsound
 from PIL import Image
 
-def center_window(window):
-    window.update_idletasks()
-    screen_width = window.winfo_screenwidth()
-    screen_height = window.winfo_screenheight()
-    x = (screen_width) // 2
-    y = (screen_height) // 2
-    window.geometry(f"+{x}+{y}")
 
-def open_sound():
-    system_sound_path = "C:\\Windows\\Media\\Windows Notify System Generic.wav"
-    winsound.PlaySound(system_sound_path, winsound.SND_FILENAME | winsound.SND_ASYNC)
+class Utils():
+    @staticmethod
+    def center_window(window):
+        window.update_idletasks()
+        screen_width = window.winfo_screenwidth()
+        screen_height = window.winfo_screenheight()
+        x = (screen_width) // 2
+        y = (screen_height) // 2
+        window.geometry(f"+{x}+{y}")
+
+    @staticmethod
+    def open_sound():
+        system_sound_path = "C:\\Windows\\Media\\Windows Notify System Generic.wav"
+        winsound.PlaySound(system_sound_path, winsound.SND_FILENAME | winsound.SND_ASYNC)
 
 
 class CTkMessagebox():
@@ -31,7 +35,7 @@ class CTkMessagebox():
         message_box.grab_set()
 
         if center == True:
-            center_window(message_box)
+            Utils.center_window(message_box)
         else:
             pass
 
@@ -46,7 +50,7 @@ class CTkMessagebox():
         b1.pack(pady=15)
 
         if sound == 'on':
-            open_sound()
+            Utils.open_sound()
         else:
             pass
 
